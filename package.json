@@ -1,0 +1,21 @@
+{
+  "name": "lyric-af",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "remotion"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,worker,remotion -c blue,green,magenta \"npm run dev -w @lyric-af/api\" \"npm run dev -w @lyric-af/worker\" \"npm run dev -w @lyric-af/remotion\"",
+    "build": "npm run build -w @lyric-af/schemas && npm run build -w @lyric-af/storage && npm run build -w @lyric-af/ffmpeg && npm run build -w @lyric-af/api && npm run build -w @lyric-af/worker",
+    "db:generate": "npm run db:generate -w @lyric-af/schemas",
+    "db:migrate": "npm run db:migrate -w @lyric-af/schemas",
+    "render:local": "npm run render:local -w @lyric-af/worker"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.3"
+  }
+}
