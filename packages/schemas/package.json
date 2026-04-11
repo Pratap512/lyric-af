@@ -1,0 +1,36 @@
+{
+  "name": "@lyric-af/schemas",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./db": {
+      "types": "./dist/db/index.d.ts",
+      "import": "./dist/db/index.js"
+    },
+    "./db/seed": {
+      "types": "./dist/db/seed.d.ts",
+      "import": "./dist/db/seed.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/db/migrate.ts"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.15.9",
+    "drizzle-orm": "^0.43.1",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.1",
+    "tsx": "^4.19.4"
+  }
+}
