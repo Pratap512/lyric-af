@@ -1,0 +1,25 @@
+{
+  "name": "@lyric-af/worker",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "render:local": "tsx src/render-local.ts"
+  },
+  "dependencies": {
+    "@lyric-af/ffmpeg": "*",
+    "@lyric-af/schemas": "*",
+    "@lyric-af/storage": "*",
+    "@remotion/bundler": "^4.0.290",
+    "@remotion/renderer": "^4.0.290",
+    "bullmq": "^5.52.2",
+    "dotenv": "^16.5.0",
+    "remotion": "^4.0.290"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.4"
+  }
+}
